@@ -8,7 +8,6 @@ def convert_ogg_to_mp3(input_ogg, output_mp3):
     subprocess.run(["ffmpeg", "-i", input_ogg, "-acodec", "libmp3lame", "-q:a", "4", output_mp3], check=True)
     return time.time() - start
 
-
 def transcribe_with_whisper(input_audio, model_type="base"):
     model = whisper.load_model(model_type)
     start = time.time()
